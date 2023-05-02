@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FacebookCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(
@@ -13,6 +14,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         // AppDelegate didFinishLaunchingWithOptions
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        Settings.shared.isAdvertiserTrackingEnabled = true
+        Settings.shared.isAutoLogAppEventsEnabled = true
+        Settings.shared.isAdvertiserIDCollectionEnabled = true
         return true
     }
 }

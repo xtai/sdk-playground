@@ -15,6 +15,9 @@
 		27552D9029D8B105005A0A55 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27552D8F29D8B104005A0A55 /* About.swift */; };
 		27552D9E29D8E64C005A0A55 /* EventButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27552D9D29D8E64C005A0A55 /* EventButton.swift */; };
 		334734F529FED3AC00D93CBC /* CustomEventButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334734F429FED3AC00D93CBC /* CustomEventButton.swift */; };
+		336E426C2A008F4A00B94BD9 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 336E426B2A008F4A00B94BD9 /* FacebookAEM */; };
+		336E426E2A008F4A00B94BD9 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 336E426D2A008F4A00B94BD9 /* FacebookBasics */; };
+		336E42702A008F4A00B94BD9 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 336E426F2A008F4A00B94BD9 /* FacebookCore */; };
 		33EC61BB29FF2FB200F7C643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC61BA29FF2FB200F7C643 /* AppDelegate.swift */; };
 		33EC61BF29FF39F900F7C643 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC61BE29FF39F900F7C643 /* AppData.swift */; };
 		33EC61C129FF3B0500F7C643 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC61C029FF3B0500F7C643 /* Tab.swift */; };
@@ -51,6 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336E426C2A008F4A00B94BD9 /* FacebookAEM in Frameworks */,
+				336E42702A008F4A00B94BD9 /* FacebookCore in Frameworks */,
+				336E426E2A008F4A00B94BD9 /* FacebookBasics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +167,11 @@
 			dependencies = (
 			);
 			name = "SDK Playground";
+			packageProductDependencies = (
+				336E426B2A008F4A00B94BD9 /* FacebookAEM */,
+				336E426D2A008F4A00B94BD9 /* FacebookBasics */,
+				336E426F2A008F4A00B94BD9 /* FacebookCore */,
+			);
 			productName = "Sean Playground";
 			productReference = 273C53B529D7451800AB2510 /* SDK Playground.app */;
 			productType = "com.apple.product-type.application";
@@ -189,6 +200,9 @@
 				Base,
 			);
 			mainGroup = 273C53AC29D7451700AB2510;
+			packageReferences = (
+				336E426A2A008F4A00B94BD9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 273C53B629D7451800AB2510 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,7 +370,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SDK Playground/Preview Content\"";
 				DEVELOPMENT_TEAM = U5UWHWMEUP;
 				ENABLE_PREVIEWS = YES;
@@ -372,7 +386,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.16.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seantai.sdk-playground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -388,7 +402,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SDK Playground/Preview Content\"";
 				DEVELOPMENT_TEAM = U5UWHWMEUP;
 				ENABLE_PREVIEWS = YES;
@@ -404,7 +418,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.16.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seantai.sdk-playground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -435,6 +449,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		336E426A2A008F4A00B94BD9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 16.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		336E426B2A008F4A00B94BD9 /* FacebookAEM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 336E426A2A008F4A00B94BD9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookAEM;
+		};
+		336E426D2A008F4A00B94BD9 /* FacebookBasics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 336E426A2A008F4A00B94BD9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookBasics;
+		};
+		336E426F2A008F4A00B94BD9 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 336E426A2A008F4A00B94BD9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 273C53AD29D7451700AB2510 /* Project object */;
 }

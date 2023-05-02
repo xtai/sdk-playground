@@ -28,7 +28,7 @@ struct DeepLink: View {
                     }
                 }
                 Section("Test Deep Link") {
-                    InAppWebButton(label: "Pixel Playground", url: "https://pixel.seantai.com/#deeplink")
+                    Link("Pixel Playground", destination: URL(string: "https://pixel.seantai.com/#deeplink")!)
                 }
                 Section() {
                     Link("sdkpark://zucc?tab=deepLink", destination: URL(string: "sdkpark://zucc?tab=deepLink")!)

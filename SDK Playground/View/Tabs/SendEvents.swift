@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FacebookCore
 
 func getRandomDouble() -> Double {
     return Double(round(100 * Double.random(in: 1..<100))/100)
@@ -29,23 +30,38 @@ struct SendEvents: View {
         NavigationStack {
             List {
                 Section(header: Text("Standard Events")) {
-                    EventButton(label: "AddToCart", trigger: {})
-                    EventButton(label: "AddToWishlist", trigger: {})
-                    EventButton(label: "InitiateCheckout", trigger: {})
-                    EventButton(label: "ViewContent", trigger: {})
+                    EventButton(label: "AddToCart", trigger: {
+                        AppEvents.shared.logEvent(AppEvents.Name.addedToCart)
+                    })
+                    EventButton(label: "AddToWishlist", trigger: {
+                        AppEvents.shared.logEvent(AppEvents.Name.addedToWishlist)
+                    })
+                    EventButton(label: "InitiateCheckout", trigger: {
+                        AppEvents.shared.logEvent(AppEvents.Name.initiatedCheckout)
+                    })
+                    EventButton(label: "ViewContent", trigger: {
+                        AppEvents.shared.logEvent(AppEvents.Name.viewedContent)
+                    })
                     EventButton(label: "Purchase", value: purchaseValue, trigger: {
+                        AppEvents.shared.logPurchase(amount: purchaseValue, currency: "USD")
                         purchaseValue = getRandomDouble()
                     })
                     EventButton(label: "Subscribe", value: subscribeValue, trigger: {
+                        AppEvents.shared.logEvent(AppEvents.Name.subscribe, valueToSum: subscribeValue)
                         subscribeValue = getRandomDouble()
                     })
                 }
                 Section(header: Text("Custom Events")) {
-                    EventButton(label: "Ping Zucc", trigger: {})
+                    EventButton(label: "Ping Zucc", trigger: {
+                        AppEvents.shared.logEvent(AppEvents.Name("Ping Zucc"))
+                    })
                     EventButton(label: "Redefined", value: redefinedValue, trigger: {
+                        AppEvents.shared.logEvent(AppEvents.Name("Redefined"), valueToSum: redefinedValue)
                         redefinedValue = getRandomDouble()
                     })
-                    CustomEventButton(value: customEventName, trigger: {})
+                    CustomEventButton(value: customEventName, trigger: {
+                        AppEvents.shared.logEvent(AppEvents.Name(customEventName))
+                    })
                 }
                 Section(header: Text("Advanced Matching")) {
                     HStack{
@@ -67,9 +83,26 @@ struct SendEvents: View {
                     }
                     TextField("Phone Number", text: $phone)
                     TextField("E-mail", text: $email)
-                    EventButton(label: "Send for Advanced Matching", trigger: {})
+                    EventButton(label: "Update User Data", trigger: {
+                        AppEvents.shared.setUserData(firstName, forType: .firstName)
+                        AppEvents.shared.setUserData(lastName, forType: .lastName)
+                        AppEvents.shared.setUserData(city, forType: .city)
+                        AppEvents.shared.setUserData(state, forType: .state)
+                        AppEvents.shared.setUserData(zip, forType: .zip)
+                        AppEvents.shared.setUserData("1" + phone.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(), forType: .phone)
+                        AppEvents.shared.setUserData(email, forType: .email)
+                    })
                 }
-            }.navigationTitle(Tab.sendEvents.label)
+            }.navigationTitle(Tab.sendEvents.label).onAppear {
+                print("Set for Advanced Matching on View Appear")
+                AppEvents.shared.setUserData(firstName, forType: .firstName)
+                AppEvents.shared.setUserData(lastName, forType: .lastName)
+                AppEvents.shared.setUserData(city, forType: .city)
+                AppEvents.shared.setUserData(state, forType: .state)
+                AppEvents.shared.setUserData(zip, forType: .zip)
+                AppEvents.shared.setUserData("1" + phone.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(), forType: .phone)
+                AppEvents.shared.setUserData(email, forType: .email)
+            }
         }
     }
 }

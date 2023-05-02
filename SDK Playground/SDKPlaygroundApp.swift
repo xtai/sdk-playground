@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FacebookCore
 
 @main
 struct SDKPlaygroundApp: App {
@@ -18,6 +19,13 @@ struct SDKPlaygroundApp: App {
                 // Deep link URL detected
                 appData.deepLinkContent = url.absoluteString
                 print("Deep Link opened: \(url.absoluteString)")
+                
+                ApplicationDelegate.shared.application(
+                    UIApplication.shared,
+                    open: url,
+                    sourceApplication: nil,
+                    annotation: [UIApplication.OpenURLOptionsKey.annotation]
+                )
                 
                 // Open tab via deep link
                 for component in url.query!.components(separatedBy: "&") {

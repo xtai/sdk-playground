@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FacebookCore
 
 struct About: View {
     var body: some View {
@@ -24,8 +25,8 @@ struct About: View {
                 Section("Facebook SDK") {
                     VStack(alignment: .leading) {
                         Text("SDK Version")
-                        let sdkVersion = "Not Installed"
-                        // let sdkVersion = Settings.shared.sdkVersion
+                        // let sdkVersion = "Not Installed"
+                        let sdkVersion = Settings.shared.sdkVersion
                         Text(sdkVersion).foregroundColor(Color.secondary)
                     }
                     VStack(alignment: .leading) {
