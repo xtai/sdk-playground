@@ -15,6 +15,9 @@
 		27552D9029D8B105005A0A55 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27552D8F29D8B104005A0A55 /* About.swift */; };
 		27552D9E29D8E64C005A0A55 /* EventButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27552D9D29D8E64C005A0A55 /* EventButton.swift */; };
 		334734F529FED3AC00D93CBC /* CustomEventButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334734F429FED3AC00D93CBC /* CustomEventButton.swift */; };
+		33566C812A1D52FA00843C8F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33566C802A1D52FA00843C8F /* AppTrackingTransparency.framework */; };
+		33566C832A1D638D00843C8F /* AlternativeIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33566C822A1D638D00843C8F /* AlternativeIcons.swift */; };
+		33566C892A1DD71C00843C8F /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33566C882A1DD71C00843C8F /* AppIcon.swift */; };
 		33EC61BB29FF2FB200F7C643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC61BA29FF2FB200F7C643 /* AppDelegate.swift */; };
 		33EC61BF29FF39F900F7C643 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC61BE29FF39F900F7C643 /* AppData.swift */; };
 		33EC61C129FF3B0500F7C643 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC61C029FF3B0500F7C643 /* Tab.swift */; };
@@ -36,6 +39,9 @@
 		27552D8F29D8B104005A0A55 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		27552D9D29D8E64C005A0A55 /* EventButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventButton.swift; sourceTree = "<group>"; };
 		334734F429FED3AC00D93CBC /* CustomEventButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEventButton.swift; sourceTree = "<group>"; };
+		33566C802A1D52FA00843C8F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		33566C822A1D638D00843C8F /* AlternativeIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeIcons.swift; sourceTree = "<group>"; };
+		33566C882A1DD71C00843C8F /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		33EC61BA29FF2FB200F7C643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33EC61BE29FF39F900F7C643 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		33EC61C029FF3B0500F7C643 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33566C812A1D52FA00843C8F /* AppTrackingTransparency.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +69,7 @@
 			children = (
 				273C53B729D7451800AB2510 /* SDK Playground */,
 				273C53B629D7451800AB2510 /* Products */,
+				33566C7F2A1D52FA00843C8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +114,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		33566C7F2A1D52FA00843C8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33566C802A1D52FA00843C8F /* AppTrackingTransparency.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		335D33B429FCB5EF00E1EA6D /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +138,7 @@
 				33EC61CE29FF6C0600F7C643 /* InAppWeb */,
 				27552D9129D8C46F005A0A55 /* Buttons */,
 				335D33B429FCB5EF00E1EA6D /* Tabs */,
+				33566C822A1D638D00843C8F /* AlternativeIcons.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +149,7 @@
 				33EC61BE29FF39F900F7C643 /* AppData.swift */,
 				33EC61C029FF3B0500F7C643 /* Tab.swift */,
 				33EC61C629FF416400F7C643 /* ReadInfo.swift */,
+				33566C882A1DD71C00843C8F /* AppIcon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +239,8 @@
 				273C53B929D7451800AB2510 /* SDKPlaygroundApp.swift in Sources */,
 				334734F529FED3AC00D93CBC /* CustomEventButton.swift in Sources */,
 				33EC61BB29FF2FB200F7C643 /* AppDelegate.swift in Sources */,
+				33566C832A1D638D00843C8F /* AlternativeIcons.swift in Sources */,
+				33566C892A1DD71C00843C8F /* AppIcon.swift in Sources */,
 				27552D9029D8B105005A0A55 /* About.swift in Sources */,
 				27552D8A29D7A99C005A0A55 /* SendEvents.swift in Sources */,
 				33EC61CB29FF48B100F7C643 /* InAppWebSheet.swift in Sources */,
@@ -352,11 +372,12 @@
 		273C53C429D7451900AB2510 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Blue AppIcon-Gray AppIcon-Dark AppIcon-Green AppIcon-Red AppIcon-Yellow";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Blueprint";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "\"SDK Playground/Preview Content\"";
 				DEVELOPMENT_TEAM = U5UWHWMEUP;
 				ENABLE_PREVIEWS = YES;
@@ -372,7 +393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seantai.sdk-playground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -384,11 +405,12 @@
 		273C53C529D7451900AB2510 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Blue AppIcon-Gray AppIcon-Dark AppIcon-Green AppIcon-Red AppIcon-Yellow";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Blueprint";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "\"SDK Playground/Preview Content\"";
 				DEVELOPMENT_TEAM = U5UWHWMEUP;
 				ENABLE_PREVIEWS = YES;
@@ -404,7 +426,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seantai.sdk-playground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
