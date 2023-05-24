@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 enum AppIcon: String, CaseIterable, Identifiable {
-    case primary = "AppIcon-Blueprint"
-    case blue = "AppIcon-Blue"
-    // case blueprint = "AppIcon-Blueprint"
+    case primary = "AppIcon-Blue"
+    //  case blue = "AppIcon-Blue"
+    case blueprint = "AppIcon-Blueprint"
     case green = "AppIcon-Green"
     case red = "AppIcon-Red"
     case yellow = "AppIcon-Yellow"
