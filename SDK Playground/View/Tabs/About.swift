@@ -22,6 +22,7 @@ struct About: View {
                         Text(UIApplication.externalURLSchemes.joined(separator: ", ")).foregroundColor(Color.secondary)
                     }
                 }
+                AlternativeIcons()
                 Section("Facebook SDK") {
                     VStack(alignment: .leading) {
                         Text("SDK Version")
@@ -46,9 +47,9 @@ struct About: View {
                         Text(String(UIApplication.FacebookAutoLogAppEventsEnabled)).foregroundColor(Color.secondary)
                     }
                 }
-                Section() {
-                    Text("To test App Events, you must first install and configure the Facebook SDK.").foregroundColor(Color.secondary)
-                    InAppWebButton(label: "Get Started with App Events (iOS)", url: "https://developers.facebook.com/docs/app-events/getting-started-app-events-ios")
+                Section("App Events") {
+                    Text("To test App Events for Meta, you must first install and configure SDK from Meta or Mobile Measurement Partner.").foregroundColor(Color.secondary)
+                    InAppWebButton(label: "About app events", url: "https://www.facebook.com/business/help/235457266642587")
                 }
                 Section("Meta Pixel") {
                     InAppWebButton(label: "Pixel Playground", url: "https://pixel.seantai.com/")
