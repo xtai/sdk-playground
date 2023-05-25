@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppsFlyerLib
 
 func getRandomDouble() -> Double {
     return Double(round(100 * Double.random(in: 1..<100))/100)
@@ -29,23 +30,49 @@ struct SendEvents: View {
         NavigationStack {
             List {
                 Section(header: Text("Standard Events")) {
-                    EventButton(label: "AddToCart", trigger: {})
-                    EventButton(label: "AddToWishlist", trigger: {})
-                    EventButton(label: "InitiateCheckout", trigger: {})
-                    EventButton(label: "ViewContent", trigger: {})
+                    EventButton(label: "AddToCart", trigger: {
+                        AppsFlyerLib.shared().logEvent(AFEventAddToCart, withValues: [:]);
+                    })
+                    EventButton(label: "AddToWishlist", trigger: {
+                        AppsFlyerLib.shared().logEvent(AFEventAddToCart, withValues: [:]);
+                    })
+                    EventButton(label: "InitiateCheckout", trigger: {
+                        AppsFlyerLib.shared().logEvent(AFEventInitiatedCheckout, withValues: [:]);
+                    })
+                    EventButton(label: "ViewContent", trigger: {
+                        AppsFlyerLib.shared().logEvent(AFEventContentView, withValues: [:]);
+                    })
                     EventButton(label: "Purchase", value: purchaseValue, trigger: {
+                        AppsFlyerLib.shared().logEvent(AFEventPurchase,
+                          withValues: [
+                             AFEventParamPrice: purchaseValue,
+                             AFEventParamCurrency:"USD"
+                        ]);
                         purchaseValue = getRandomDouble()
                     })
                     EventButton(label: "Subscribe", value: subscribeValue, trigger: {
+                        AppsFlyerLib.shared().logEvent(AFEventSubscribe,
+                          withValues: [
+                             AFEventParamPrice: subscribeValue,
+                             AFEventParamCurrency:"USD"
+                        ]);
                         subscribeValue = getRandomDouble()
                     })
                 }
                 Section(header: Text("Custom Events")) {
-                    EventButton(label: "Ping Zucc", trigger: {})
+                    EventButton(label: "Ping Zucc", trigger: {
+                        AppsFlyerLib.shared().logEvent("Ping Zucc", withValues: [:]);
+                    })
                     EventButton(label: "Redefined", value: redefinedValue, trigger: {
+                        AppsFlyerLib.shared().logEvent("Redefined",
+                          withValues: [
+                             AFEventParamPrice: redefinedValue
+                        ]);
                         redefinedValue = getRandomDouble()
                     })
-                    CustomEventButton(value: customEventName, trigger: {})
+                    CustomEventButton(value: customEventName, trigger: {
+                        AppsFlyerLib.shared().logEvent(customEventName, withValues: [:]);
+                    })
                 }
                 Section(header: Text("Advanced Matching")) {
                     HStack{

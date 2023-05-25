@@ -18,6 +18,7 @@
 		33566C812A1D52FA00843C8F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33566C802A1D52FA00843C8F /* AppTrackingTransparency.framework */; };
 		33566C832A1D638D00843C8F /* AlternativeIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33566C822A1D638D00843C8F /* AlternativeIcons.swift */; };
 		33566C892A1DD71C00843C8F /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33566C882A1DD71C00843C8F /* AppIcon.swift */; };
+		33CE41D72A1FD2EF005C016B /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 33CE41D62A1FD2EF005C016B /* AppsFlyerLib */; };
 		33EC61BB29FF2FB200F7C643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC61BA29FF2FB200F7C643 /* AppDelegate.swift */; };
 		33EC61BF29FF39F900F7C643 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC61BE29FF39F900F7C643 /* AppData.swift */; };
 		33EC61C129FF3B0500F7C643 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC61C029FF3B0500F7C643 /* Tab.swift */; };
@@ -58,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33566C812A1D52FA00843C8F /* AppTrackingTransparency.framework in Frameworks */,
+				33CE41D72A1FD2EF005C016B /* AppsFlyerLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +181,9 @@
 			dependencies = (
 			);
 			name = "SDK Playground";
+			packageProductDependencies = (
+				33CE41D62A1FD2EF005C016B /* AppsFlyerLib */,
+			);
 			productName = "Sean Playground";
 			productReference = 273C53B529D7451800AB2510 /* SDK Playground.app */;
 			productType = "com.apple.product-type.application";
@@ -207,6 +212,9 @@
 				Base,
 			);
 			mainGroup = 273C53AC29D7451700AB2510;
+			packageReferences = (
+				33CE41D52A1FD2EF005C016B /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+			);
 			productRefGroup = 273C53B629D7451800AB2510 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -372,12 +380,12 @@
 		273C53C429D7451900AB2510 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Blue AppIcon-Gray AppIcon-Dark AppIcon-Green AppIcon-Red AppIcon-Yellow";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Blueprint";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Blue AppIcon-Gray AppIcon-Dark AppIcon-Blueprint AppIcon-Red AppIcon-Yellow";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Green";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "\"SDK Playground/Preview Content\"";
 				DEVELOPMENT_TEAM = U5UWHWMEUP;
 				ENABLE_PREVIEWS = YES;
@@ -393,8 +401,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.seantai.sdk-playground";
+				MARKETING_VERSION = 2.6.11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seantai.sdk-playground.appsflyer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -405,12 +413,12 @@
 		273C53C529D7451900AB2510 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Blue AppIcon-Gray AppIcon-Dark AppIcon-Green AppIcon-Red AppIcon-Yellow";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Blueprint";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Blue AppIcon-Gray AppIcon-Dark AppIcon-Blueprint AppIcon-Red AppIcon-Yellow";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Green";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "\"SDK Playground/Preview Content\"";
 				DEVELOPMENT_TEAM = U5UWHWMEUP;
 				ENABLE_PREVIEWS = YES;
@@ -426,8 +434,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.seantai.sdk-playground";
+				MARKETING_VERSION = 2.6.11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seantai.sdk-playground.appsflyer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -457,6 +465,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		33CE41D52A1FD2EF005C016B /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		33CE41D62A1FD2EF005C016B /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33CE41D52A1FD2EF005C016B /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 273C53AD29D7451700AB2510 /* Project object */;
 }

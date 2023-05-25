@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AppTrackingTransparency
+import AppsFlyerLib
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(
@@ -14,20 +15,26 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         // AppDelegate didFinishLaunchingWithOptions
-        // code...
-                
+        AppsFlyerLib.shared().appsFlyerDevKey = "123e4567e89b12d3a45642"
+        AppsFlyerLib.shared().appleAppID = "id3141592653"
+
+        // AppsFlyerLib.shared().appInviteOneLinkID = "1234"
+
         // Subscribe to didBecomeActiveNotification
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(didBecomeActiveNotification),
             name: UIApplication.didBecomeActiveNotification,
             object: nil)
+        
+        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
+        
         return true
     }
 
     @objc func didBecomeActiveNotification() {
         // AppDelegate didBecomeActiveNotification
-        // code...
+        AppsFlyerLib.shared().start()
 
         // AppTrackingTransparency
         if #available(iOS 14, *) {
